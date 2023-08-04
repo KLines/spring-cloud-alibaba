@@ -170,7 +170,16 @@ class SampleController {
 
 	@RequestMapping("/bool")
 	public boolean bool() {
-		return (Boolean) (userConfig.getMap().get("2"));
+		return Boolean.valueOf(String.valueOf(userConfig.getMap().get("2")));
 	}
-
+/**
+ application.properties map init
+ https://blog.csdn.net/qq_41946216/article/details/124769491
+ name=abc6
+ user.name=Ren
+ user.age=22
+ user.map.1=true
+ user.map.2=true
+ user.map.3=false
+ */
 }

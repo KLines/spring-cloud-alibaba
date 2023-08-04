@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: ${svc_nacos-config}
+  cloud:
+    nacos:
+      username: ${nacos_username}
+      password: ${nacos_password}
+      config:
+        server-addr: ${nacos_host}:${nacos_port}
+        namespace: ${nacos_namespace}
+        group: ${nacos_groupId}
+        name: ${svc_nacos-config02}
+        #        file-extension: properties
+        sharedConfigs:
+          - group: GROUP_APP1
+            data-id: common111.properties
+            refresh: true
+          - common222.properties
+          - common333.properties
+          - group: GROUP_APP1
+            data-id: test2.yaml
+            refresh: true
+        extension-configs:
+          - data-id: extension1.properties
+            refresh: true
+          - extension2.properties
+          - data-id: extension3.json
+          - data-id: test1.yml
+            refresh: true
