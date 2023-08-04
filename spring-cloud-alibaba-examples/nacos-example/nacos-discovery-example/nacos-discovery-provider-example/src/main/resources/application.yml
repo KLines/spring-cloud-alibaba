@@ -1,0 +1,23 @@
+server:
+  port: ${svc_discovery-provider_port}
+
+spring:
+  application:
+    name: ${svc_discovery-provider}
+  cloud:
+    nacos:
+      username: ${nacos_username}
+      password: ${nacos_password}
+      discovery:
+        server-addr: ${nacos_host}:${nacos_port}
+        namespace: ${nacos_namespace}
+        group: ${nacos_groupId}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
